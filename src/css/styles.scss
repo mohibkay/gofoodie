@@ -67,17 +67,18 @@ body {
   border: 2px solid #f21e08;
 }
 
-.errorMsg,
-.oosMsg {
+.error-msg,
+.oos-msg {
   max-width: 350px;
+  background: #fff;
   color: #f21e08;
-  padding: 2px 0;
+  padding: 2px 5px;
   margin-top: 2px;
   font-size: 14px;
   font-weight: 400;
 }
 
-.oosMsg {
+.oos-msg {
   margin-left: 2rem;
   max-width: unset;
   font-size: 1.1rem;
@@ -579,12 +580,16 @@ h6 {
 }
 
 .menu-content {
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
   text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
-.menu {
+.menu-content .menu {
   width: 30%;
   margin: 10px;
   display: inline-block;

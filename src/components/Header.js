@@ -16,7 +16,7 @@ const Header = ({ showCart = false, cartCount = 0 }) => {
           <FiShoppingCart size="30" color="green" className="cart-logo" />
           <span className="cart-count">{cartCount}</span>
         </div>
-        <div className="menu-link">
+        <div className="menu-link" style={displayStyle}>
           <Link to="/menu">Available Menus</Link>
         </div>
       </header>

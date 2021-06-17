@@ -1,0 +1,357 @@
+[
+  {
+    "_id": "608bf734770cc4002db2f0cb",
+    "cat_title": "Pizza",
+    "published_at": "2021-04-30T12:25:32.112Z",
+    "createdAt": "2021-04-30T12:25:24.404Z",
+    "updatedAt": "2021-05-31T11:31:15.533Z",
+    "__v": 0,
+    "has_veg_nonveg_option": true,
+    "image": {
+      "_id": "60b4c88a35b9dc16f8cdc0ca",
+      "name": "pizza.jpg",
+      "alternativeText": "",
+      "caption": "",
+      "hash": "pizza_b307039200",
+      "ext": ".jpg",
+      "mime": "image/jpeg",
+      "size": 90.7,
+      "width": 640,
+      "height": 494,
+      "url": "https://res.cloudinary.com/dyatqxvue/image/upload/v1622460550/pizza_b307039200.jpg",
+      "provider_metadata": {
+        "public_id": "pizza_b307039200",
+        "resource_type": "image"
+      },
+      "formats": {
+        "thumbnail": {
+          "name": "thumbnail_pizza.jpg",
+          "hash": "thumbnail_pizza_b307039200",
+          "ext": ".jpg",
+          "mime": "image/jpeg",
+          "width": 202,
+          "height": 156,
+          "size": 9.49,
+          "path": null,
+          "url": "https://res.cloudinary.com/dyatqxvue/image/upload/v1622460552/thumbnail_pizza_b307039200.jpg",
+          "provider_metadata": {
+            "public_id": "thumbnail_pizza_b307039200",
+            "resource_type": "image"
+          }
+        },
+        "small": {
+          "name": "small_pizza.jpg",
+          "hash": "small_pizza_b307039200",
+          "ext": ".jpg",
+          "mime": "image/jpeg",
+          "width": 500,
+          "height": 386,
+          "size": 52.03,
+          "path": null,
+          "url": "https://res.cloudinary.com/dyatqxvue/image/upload/v1622460554/small_pizza_b307039200.jpg",
+          "provider_metadata": {
+            "public_id": "small_pizza_b307039200",
+            "resource_type": "image"
+          }
+        }
+      },
+      "provider": "cloudinary",
+      "related": ["608bf734770cc4002db2f0cb"],
+      "createdAt": "2021-05-31T11:29:14.851Z",
+      "updatedAt": "2021-05-31T11:31:15.451Z",
+      "__v": 0,
+      "id": "60b4c88a35b9dc16f8cdc0ca"
+    },
+    "id": "608bf734770cc4002db2f0cb"
+  },
+  {
+    "_id": "608bf917770cc4002db2f0cc",
+    "cat_title": "Biryani",
+    "published_at": "2021-04-30T12:33:34.676Z",
+    "createdAt": "2021-04-30T12:33:27.647Z",
+    "updatedAt": "2021-05-31T11:29:53.187Z",
+    "__v": 0,
+    "image": {
+      "_id": "60b4c88935b9dc16f8cdc0c8",
+      "name": "biryani.png",
+      "alternativeText": "",
+      "caption": "",
+      "hash": "biryani_612e917b65",
+      "ext": ".png",
+      "mime": "image/png",
+      "size": 139.45,
+      "width": 292,
+      "height": 259,
+      "url": "https://res.cloudinary.com/dyatqxvue/image/upload/v1622460550/biryani_612e917b65.png",
+      "provider_metadata": {
+        "public_id": "biryani_612e917b65",
+        "resource_type": "image"
+      },
+      "formats": {
+        "thumbnail": {
+          "name": "thumbnail_biryani.png",
+          "hash": "thumbnail_biryani_612e917b65",
+          "ext": ".png",
+          "mime": "image/png",
+          "width": 176,
+          "height": 156,
+          "size": 59.3,
+          "path": null,
+          "url": "https://res.cloudinary.com/dyatqxvue/image/upload/v1622460552/thumbnail_biryani_612e917b65.png",
+          "provider_metadata": {
+            "public_id": "thumbnail_biryani_612e917b65",
+            "resource_type": "image"
+          }
+        }
+      },
+      "provider": "cloudinary",
+      "related": ["608bf917770cc4002db2f0cc"],
+      "createdAt": "2021-05-31T11:29:13.158Z",
+      "updatedAt": "2021-05-31T11:29:53.083Z",
+      "__v": 0,
+      "id": "60b4c88935b9dc16f8cdc0c8"
+    },
+    "id": "608bf917770cc4002db2f0cc"
+  },
+  {
+    "_id": "608bf92a770cc4002db2f0cd",
+    "cat_title": "Breakfast",
+    "published_at": "2021-04-30T12:34:01.149Z",
+    "createdAt": "2021-04-30T12:33:46.980Z",
+    "updatedAt": "2021-05-31T11:30:08.720Z",
+    "__v": 0,
+    "image": {
+      "_id": "60b4c88d35b9dc16f8cdc0cd",
+      "name": "breakfast.png",
+      "alternativeText": "",
+      "caption": "",
+      "hash": "breakfast_ca088d19b9",
+      "ext": ".png",
+      "mime": "image/png",
+      "size": 400.18,
+      "width": 612,
+      "height": 407,
+      "url": "https://res.cloudinary.com/dyatqxvue/image/upload/v1622460551/breakfast_ca088d19b9.png",
+      "provider_metadata": {
+        "public_id": "breakfast_ca088d19b9",
+        "resource_type": "image"
+      },
+      "formats": {
+        "thumbnail": {
+          "name": "thumbnail_breakfast.png",
+          "hash": "thumbnail_breakfast_ca088d19b9",
+          "ext": ".png",
+          "mime": "image/png",
+          "width": 235,
+          "height": 156,
+          "size": 73.63,
+          "path": null,
+          "url": "https://res.cloudinary.com/dyatqxvue/image/upload/v1622460553/thumbnail_breakfast_ca088d19b9.png",
+          "provider_metadata": {
+            "public_id": "thumbnail_breakfast_ca088d19b9",
+            "resource_type": "image"
+          }
+        },
+        "small": {
+          "name": "small_breakfast.png",
+          "hash": "small_breakfast_ca088d19b9",
+          "ext": ".png",
+          "mime": "image/png",
+          "width": 500,
+          "height": 333,
+          "size": 301.62,
+          "path": null,
+          "url": "https://res.cloudinary.com/dyatqxvue/image/upload/v1622460556/small_breakfast_ca088d19b9.png",
+          "provider_metadata": {
+            "public_id": "small_breakfast_ca088d19b9",
+            "resource_type": "image"
+          }
+        }
+      },
+      "provider": "cloudinary",
+      "related": ["608bf92a770cc4002db2f0cd"],
+      "createdAt": "2021-05-31T11:29:17.252Z",
+      "updatedAt": "2021-05-31T11:30:08.643Z",
+      "__v": 0,
+      "id": "60b4c88d35b9dc16f8cdc0cd"
+    },
+    "id": "608bf92a770cc4002db2f0cd"
+  },
+  {
+    "_id": "608bf942770cc4002db2f0ce",
+    "cat_title": "Desserts",
+    "published_at": "2021-04-30T12:34:18.037Z",
+    "createdAt": "2021-04-30T12:34:10.707Z",
+    "updatedAt": "2021-05-31T11:30:59.407Z",
+    "__v": 0,
+    "image": {
+      "_id": "60b4c88c35b9dc16f8cdc0cb",
+      "name": "ice_cream.png",
+      "alternativeText": "",
+      "caption": "",
+      "hash": "ice_cream_83873d1c2f",
+      "ext": ".png",
+      "mime": "image/png",
+      "size": 349.86,
+      "width": 615,
+      "height": 406,
+      "url": "https://res.cloudinary.com/dyatqxvue/image/upload/v1622460551/ice_cream_83873d1c2f.png",
+      "provider_metadata": {
+        "public_id": "ice_cream_83873d1c2f",
+        "resource_type": "image"
+      },
+      "formats": {
+        "thumbnail": {
+          "name": "thumbnail_ice_cream.png",
+          "hash": "thumbnail_ice_cream_83873d1c2f",
+          "ext": ".png",
+          "mime": "image/png",
+          "width": 236,
+          "height": 156,
+          "size": 69.46,
+          "path": null,
+          "url": "https://res.cloudinary.com/dyatqxvue/image/upload/v1622460553/thumbnail_ice_cream_83873d1c2f.png",
+          "provider_metadata": {
+            "public_id": "thumbnail_ice_cream_83873d1c2f",
+            "resource_type": "image"
+          }
+        },
+        "small": {
+          "name": "small_ice_cream.png",
+          "hash": "small_ice_cream_83873d1c2f",
+          "ext": ".png",
+          "mime": "image/png",
+          "width": 500,
+          "height": 330,
+          "size": 268.74,
+          "path": null,
+          "url": "https://res.cloudinary.com/dyatqxvue/image/upload/v1622460556/small_ice_cream_83873d1c2f.png",
+          "provider_metadata": {
+            "public_id": "small_ice_cream_83873d1c2f",
+            "resource_type": "image"
+          }
+        }
+      },
+      "provider": "cloudinary",
+      "related": ["608bf942770cc4002db2f0ce"],
+      "createdAt": "2021-05-31T11:29:16.984Z",
+      "updatedAt": "2021-05-31T11:30:59.332Z",
+      "__v": 0,
+      "id": "60b4c88c35b9dc16f8cdc0cb"
+    },
+    "id": "608bf942770cc4002db2f0ce"
+  },
+  {
+    "_id": "608bf954770cc4002db2f0cf",
+    "cat_title": "Burgers",
+    "published_at": "2021-04-30T12:34:35.565Z",
+    "createdAt": "2021-04-30T12:34:28.588Z",
+    "updatedAt": "2021-05-31T11:30:25.796Z",
+    "__v": 0,
+    "image": {
+      "_id": "60b4c88d35b9dc16f8cdc0cc",
+      "name": "burger.png",
+      "alternativeText": "",
+      "caption": "",
+      "hash": "burger_30b1437fb0",
+      "ext": ".png",
+      "mime": "image/png",
+      "size": 453.79,
+      "width": 576,
+      "height": 433,
+      "url": "https://res.cloudinary.com/dyatqxvue/image/upload/v1622460550/burger_30b1437fb0.png",
+      "provider_metadata": {
+        "public_id": "burger_30b1437fb0",
+        "resource_type": "image"
+      },
+      "formats": {
+        "thumbnail": {
+          "name": "thumbnail_burger.png",
+          "hash": "thumbnail_burger_30b1437fb0",
+          "ext": ".png",
+          "mime": "image/png",
+          "width": 208,
+          "height": 156,
+          "size": 73.02,
+          "path": null,
+          "url": "https://res.cloudinary.com/dyatqxvue/image/upload/v1622460553/thumbnail_burger_30b1437fb0.png",
+          "provider_metadata": {
+            "public_id": "thumbnail_burger_30b1437fb0",
+            "resource_type": "image"
+          }
+        },
+        "small": {
+          "name": "small_burger.png",
+          "hash": "small_burger_30b1437fb0",
+          "ext": ".png",
+          "mime": "image/png",
+          "width": 500,
+          "height": 376,
+          "size": 376.23,
+          "path": null,
+          "url": "https://res.cloudinary.com/dyatqxvue/image/upload/v1622460556/small_burger_30b1437fb0.png",
+          "provider_metadata": {
+            "public_id": "small_burger_30b1437fb0",
+            "resource_type": "image"
+          }
+        }
+      },
+      "provider": "cloudinary",
+      "related": ["608bf954770cc4002db2f0cf"],
+      "createdAt": "2021-05-31T11:29:17.007Z",
+      "updatedAt": "2021-05-31T11:30:25.707Z",
+      "__v": 0,
+      "id": "60b4c88d35b9dc16f8cdc0cc"
+    },
+    "id": "608bf954770cc4002db2f0cf"
+  },
+  {
+    "_id": "608bf99a770cc4002db2f0d0",
+    "cat_title": "Sandwiches",
+    "published_at": "2021-04-30T12:35:47.922Z",
+    "createdAt": "2021-04-30T12:35:38.141Z",
+    "updatedAt": "2021-05-31T11:31:28.108Z",
+    "__v": 0,
+    "image": {
+      "_id": "60b4c88935b9dc16f8cdc0c9",
+      "name": "sandwich.png",
+      "alternativeText": "",
+      "caption": "",
+      "hash": "sandwich_b7e224d5d2",
+      "ext": ".png",
+      "mime": "image/png",
+      "size": 336.68,
+      "width": 500,
+      "height": 500,
+      "url": "https://res.cloudinary.com/dyatqxvue/image/upload/v1622460550/sandwich_b7e224d5d2.png",
+      "provider_metadata": {
+        "public_id": "sandwich_b7e224d5d2",
+        "resource_type": "image"
+      },
+      "formats": {
+        "thumbnail": {
+          "name": "thumbnail_sandwich.png",
+          "hash": "thumbnail_sandwich_b7e224d5d2",
+          "ext": ".png",
+          "mime": "image/png",
+          "width": 156,
+          "height": 156,
+          "size": 40.85,
+          "path": null,
+          "url": "https://res.cloudinary.com/dyatqxvue/image/upload/v1622460553/thumbnail_sandwich_b7e224d5d2.png",
+          "provider_metadata": {
+            "public_id": "thumbnail_sandwich_b7e224d5d2",
+            "resource_type": "image"
+          }
+        }
+      },
+      "provider": "cloudinary",
+      "related": ["608bf99a770cc4002db2f0d0", "60b38c1585501a41d3ae8231"],
+      "createdAt": "2021-05-31T11:29:13.610Z",
+      "updatedAt": "2021-05-31T11:44:40.336Z",
+      "__v": 0,
+      "id": "60b4c88935b9dc16f8cdc0c9"
+    },
+    "id": "608bf99a770cc4002db2f0d0"
+  }
+]

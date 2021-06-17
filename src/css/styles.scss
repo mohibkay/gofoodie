@@ -156,7 +156,7 @@ h1 {
     $dark-green 0%,
     rgba(0, 101, 255, 0.9878326330532213) 65%
   );
-  //   -webkit-background-clip: text;
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 2rem;
 }
@@ -568,7 +568,7 @@ h6 {
 }
 
 .menu-section {
-  //   background-image: url("images/hero-image.jpeg");
+  background-image: url("images/hero-image.jpeg");
   width: 100%;
   background-position: center;
   background-repeat: no-repeat;

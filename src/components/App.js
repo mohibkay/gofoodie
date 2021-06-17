@@ -1,5 +1,6 @@
 import Carousel from "./Carousel";
 import Footer from "./Footer";
+import MenuItems from "./MenuItems";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           cum tempore temporibus nam perspiciatis.
         </p>
       </div>
+      <MenuItems />
       <Footer />
     </div>
   );

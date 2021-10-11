@@ -7,3 +7,5 @@ export const getQueryStringValue = (url, search) => {
   const params = new URLSearchParams(url);
   return params.get(search);
 };
+
+export const getFormattedTopping = (topping) => topping.split("_").join(" ");

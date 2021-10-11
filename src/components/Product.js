@@ -12,6 +12,7 @@ const Product = ({
   quantity,
   image,
   rating,
+  toggleModal,
   isVeg,
   category,
   changeProductCount,
@@ -27,6 +28,12 @@ const Product = ({
       );
     } else {
       return <span title={description}>{description}</span>;
+    }
+  };
+
+  const addItem = () => {
+    if (category === "pizza") {
+      toggleModal(id, title, image, price);
     }
   };
 
@@ -107,6 +114,7 @@ const Product = ({
                 className={`${
                   isOutOfStock ? "btn-disabled add-btn" : "add-btn"
                 }`}
+                onClick={!isOutOfStock ? addItem : null}
               >
                 Add
               </Button>

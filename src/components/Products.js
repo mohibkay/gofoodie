@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
 import { getAllProducts } from "../actions/productsActions";
@@ -41,6 +41,8 @@ const Products = ({
     }
   }, []);
 
+  const emptyArrayRef = useRef([]);
+
   useEffect(() => {
     setFilteredResults(products);
   }, [products]);
@@ -48,6 +50,19 @@ const Products = ({
   useEffect(() => {
     dispatch(getToppings());
   }, []);
+
+  useEffect(() => {
+    emptyArrayRef.current = new Array(toppings.length).fill(false);
+    setCheckedState(emptyArrayRef.current);
+  }, [toppings.length]);
+
+  useEffect(() => {
+    if (selectedProduct.price >= 0 && selectedToppingsCount > 0) {
+      setTotalOrderPrice(selectedProduct.price + selectedProduct.productPrice);
+    } else if (selectedProduct.price >= 0) {
+      setTotalOrderPrice(selectedProduct.price);
+    }
+  }, [selectedProduct.price, selectedToppingsCount]);
 
   const toggleModal = (id, title, image, price) => {
     if (id) {
@@ -66,7 +81,7 @@ const Products = ({
   const addProduct = () => {
     const { id, title, image } = selectedProduct;
     console.log({ selectedProduct });
-    setShowModal(!showModal);
+    setShowModal((showModal) => !showModal);
     // toast.success('Product added successfully.');
   };
 

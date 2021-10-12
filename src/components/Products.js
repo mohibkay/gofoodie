@@ -8,6 +8,7 @@ import { getQueryStringValue } from "../utils/functions";
 import Product from "./Product";
 import Layout from "./Layout";
 import ToppingsModal from "./ToppingsModal";
+import { addToCartAction } from "../actions/cardActions";
 
 const Products = ({
   dispatch,
@@ -28,6 +29,7 @@ const Products = ({
   const [modalTitle, setModalTitle] = useState("");
   const [filteredResults, setFilteredResults] = useState([]);
   const { search = "" } = location;
+  const [cartProducts, setCartProducts] = useState([]);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -80,9 +82,67 @@ const Products = ({
 
   const addProduct = () => {
     const { id, title, image } = selectedProduct;
-    console.log({ selectedProduct });
+
+    let isAlreadyAdded = false;
+    const isPizzaCategory = category === "pizza";
+    let cart = cartProducts.map((cartProduct) => {
+      if (cartProduct.id === id) {
+        isAlreadyAdded = true;
+        cartProduct.quantity = productQuantity;
+        cartProduct.price = totalOrderPrice;
+        cartProducts.category = category;
+        if (isPizzaCategory) {
+          cartProduct.toppings = checkedState
+            .map((isChecked, index) =>
+              isChecked ? toppings[index].name : null
+            )
+            .filter(Boolean);
+        }
+        return cartProduct;
+      } else {
+        return cartProduct;
+      }
+    });
+
+    if (!isAlreadyAdded) {
+      cart = [
+        ...cart,
+        {
+          id,
+          title,
+          image,
+          toppings: isPizzaCategory
+            ? checkedState
+                .map((isChecked, index) =>
+                  isChecked ? toppings[index].name : null
+                )
+                .filter(Boolean)
+            : null,
+          quantity: productQuantity,
+          price: totalOrderPrice,
+          category,
+        },
+      ];
+
+      if (isPizzaCategory) {
+        // remove toppings from non-pizza category products
+        cart = cart.map((item) => {
+          if (
+            (item.category === "pizza" && item.toppings.length > 0) ||
+            item.category === "pizza"
+          ) {
+            return item;
+          } else {
+            delete item.toppings;
+            return item;
+          }
+        });
+      }
+    }
+
+    setCartProducts(cart);
     setShowModal((showModal) => !showModal);
-    // toast.success('Product added successfully.');
+    dispatch(addToCartAction(cart));
   };
 
   const handleToppingsSelection = (position) => {

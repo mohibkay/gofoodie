@@ -80,6 +80,14 @@ const Products = ({
     setShowModal(!showModal);
   };
 
+  const resetState = () => {
+    setSelectedProduct({});
+    setCheckedState(emptyArrayRef.current);
+    setProductQuantity(1);
+    setSelectedToppingsCount(0);
+    setTotalOrderPrice(0);
+  };
+
   const addProduct = () => {
     const { id, title, image } = selectedProduct;
 
@@ -141,6 +149,7 @@ const Products = ({
     }
 
     setCartProducts(cart);
+    resetState();
     setShowModal((showModal) => !showModal);
     dispatch(addToCartAction(cart));
   };

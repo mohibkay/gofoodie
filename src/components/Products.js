@@ -14,6 +14,7 @@ const Products = ({
   dispatch,
   products,
   toppings,
+  cart,
   isLoading,
   isFailed,
   location,
@@ -48,6 +49,10 @@ const Products = ({
   useEffect(() => {
     setFilteredResults(products);
   }, [products]);
+
+  useEffect(() => {
+    setCartProducts(cart);
+  }, [cart]);
 
   useEffect(() => {
     dispatch(getToppings());
@@ -292,13 +297,15 @@ const mapStateToProps = (state) => {
   const {
     products: { data, isLoading, isFailed },
     toppings,
+    cart,
   } = state;
 
   return {
     products: data,
+    toppings: toppings.data,
+    cart: cart.data,
     isLoading,
     isFailed,
-    toppings: toppings.data,
   };
 };
 

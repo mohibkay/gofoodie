@@ -16,6 +16,7 @@ const Product = ({
   isVeg,
   category,
   changeProductCount,
+  addProductToCart,
 }) => {
   const [productQuantity, setProductQuantity] = useState(1);
 
@@ -34,6 +35,8 @@ const Product = ({
   const addItem = () => {
     if (category === "pizza") {
       toggleModal(id, title, image, price);
+    } else {
+      addProductToCart(id, title, image, price);
     }
   };
 

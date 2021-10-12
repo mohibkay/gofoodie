@@ -88,7 +88,7 @@ const Products = ({
     setTotalOrderPrice(0);
   };
 
-  const addProduct = () => {
+  const addPizzaToCart = () => {
     const { id, title, image } = selectedProduct;
 
     let isAlreadyAdded = false;
@@ -151,6 +151,22 @@ const Products = ({
     setCartProducts(cart);
     resetState();
     setShowModal((showModal) => !showModal);
+    dispatch(addToCartAction(cart));
+  };
+
+  const addProductToCart = (id, title, image, price) => {
+    const cart = [
+      ...cartProducts,
+      {
+        id,
+        title,
+        image,
+        quantity: productQuantity,
+        price,
+        category,
+      },
+    ];
+    setCartProducts(cart);
     dispatch(addToCartAction(cart));
   };
 
@@ -246,6 +262,7 @@ const Products = ({
                   isVeg={is_veg}
                   category={category}
                   toggleModal={toggleModal}
+                  addProductToCart={addProductToCart}
                 />
               )
             )
@@ -265,7 +282,7 @@ const Products = ({
         totalOrderPrice={totalOrderPrice}
         handleQuantityChange={handleQuantityChange}
         handleToppingsSelection={handleToppingsSelection}
-        addProduct={addProduct}
+        addPizzaToCart={addPizzaToCart}
       />
     </Layout>
   );

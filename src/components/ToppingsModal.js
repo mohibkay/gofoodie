@@ -13,7 +13,7 @@ const ToppingsModal = ({
   totalOrderPrice,
   handleQuantityChange,
   handleToppingsSelection,
-  addProduct,
+  addPizzaToCart,
 }) => {
   return (
     <Modal show={showModal} onHide={toggleModal} className="toppings-modal">
@@ -71,7 +71,7 @@ const ToppingsModal = ({
               &#43;
             </span>
           </div>
-          <Button variant="warning" onClick={addProduct}>
+          <Button variant="warning" onClick={addPizzaToCart}>
             Add To Cart
           </Button>
         </div>

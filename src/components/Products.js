@@ -2,12 +2,18 @@
 import React, { useState, useEffect, useRef } from "react";
 import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
-import { getAllProducts } from "../actions/productsActions";
-import { getToppings } from "../actions/toppingsActions";
-import { getQueryStringValue } from "../utils/functions";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+// components
 import Product from "./Product";
 import Layout from "./Layout";
 import ToppingsModal from "./ToppingsModal";
+
+// functions
+import { getAllProducts } from "../actions/productsActions";
+import { getToppings } from "../actions/toppingsActions";
+import { getQueryStringValue } from "../utils/functions";
 import { addToCartAction } from "../actions/cardActions";
 
 const Products = ({
@@ -157,6 +163,7 @@ const Products = ({
     resetState();
     setShowModal((showModal) => !showModal);
     dispatch(addToCartAction(cart));
+    toast.info("Product added successfully.");
   };
 
   const addProductToCart = (id, title, image, price) => {
@@ -173,6 +180,7 @@ const Products = ({
     ];
     setCartProducts(cart);
     dispatch(addToCartAction(cart));
+    toast.info("Product added successfully.");
   };
 
   const handleToppingsSelection = (position) => {

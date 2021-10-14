@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { connect } from "react-redux";
 import { TiDelete } from "react-icons/ti";
 import { removeFromCartAction } from "../actions/cartActions";
@@ -7,18 +7,13 @@ import { getFormattedPrice, getFormattedToppings } from "../utils/functions";
 import Layout from "./Layout";
 import { getAllProducts } from "../actions/productsActions";
 import { CURRENCY, REMOVE_FROM_CART_SUCCESS } from "../utils/constants";
+import CartContext from "../context/CartContext";
 
-const ShoppingCart = ({
-  cart,
-  products,
-  dispatch,
-  history,
-  items,
-  setItems,
-  isFailed,
-}) => {
+const ShoppingCart = ({ cart, products, dispatch, history, isFailed }) => {
   const [cartProducts, setCartProducts] = useState(() => cart);
   const [errorMsg, setErrorMsg] = useState("");
+
+  const { items, setItems } = useContext(CartContext);
 
   useEffect(() => {
     dispatch(getAllProducts());
@@ -76,7 +71,7 @@ const ShoppingCart = ({
     <Layout cartCount={items.length}>
       <div className="main-title">Shopping Cart</div>
       {cartProducts.length > 0 ? (
-        <React.Fragment>
+        <>
           {errorMsg !== "" && <p className="oosMsg">{errorMsg}</p>}
           <div className="shopping-cart">
             <ul className="cart-items">
@@ -170,7 +165,7 @@ const ShoppingCart = ({
               </div>
             </div>
           </div>
-        </React.Fragment>
+        </>
       ) : (
         <div className="shopping-cart">
           <p className="no-items">Your shopping cart is currently empty.</p>

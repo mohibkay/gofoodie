@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useContext, useRef } from "react";
 import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -18,6 +18,7 @@ import {
   addToCartAction,
   changeProductCountAction,
 } from "../actions/cartActions";
+import CartContext from "../context/CartContext";
 
 const Products = ({
   dispatch,
@@ -27,8 +28,6 @@ const Products = ({
   isLoading,
   isFailed,
   location,
-  items,
-  setItems,
 }) => {
   const [category, setCategory] = useState("");
   const [selectedFilter, setSelectedFilter] = useState(false);
@@ -40,8 +39,10 @@ const Products = ({
   const [showModal, setShowModal] = useState(false);
   const [modalTitle, setModalTitle] = useState("");
   const [filteredResults, setFilteredResults] = useState([]);
-  const { search = "" } = location;
   const [cartProducts, setCartProducts] = useState([]);
+
+  const { search = "" } = location;
+  const { items, setItems } = useContext(CartContext);
 
   useEffect(() => {
     window.scrollTo(0, 0);

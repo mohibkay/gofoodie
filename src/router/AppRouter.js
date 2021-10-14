@@ -3,14 +3,22 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import App from "../components/App";
 import MenuItems from "../components/MenuItems";
 import Products from "../components/Products";
+import useLocalStorage from "../hooks/useLocalStorage";
 
 const AppRouter = () => {
+  const [items, setItems] = useLocalStorage("cartItems", []);
+
   return (
     <BrowserRouter>
       <Switch>
         <Route component={App} path="/" exact={true} />
         <Route component={MenuItems} path="/menu" />
-        <Route component={Products} path="/products" />
+        <Route
+          path="/products"
+          render={(props) => (
+            <Products {...props} items={items} setItems={setItems} />
+          )}
+        />
       </Switch>
     </BrowserRouter>
   );

@@ -24,6 +24,8 @@ const Products = ({
   isLoading,
   isFailed,
   location,
+  items,
+  setItems,
 }) => {
   const [category, setCategory] = useState("");
   const [selectedFilter, setSelectedFilter] = useState(false);
@@ -40,6 +42,13 @@ const Products = ({
 
   useEffect(() => {
     window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
+    if (cartProducts.length === 0 || items.length !== cartProducts.length) {
+      setCartProducts(items);
+      dispatch(addToCartAction(items));
+    }
   }, []);
 
   useEffect(() => {
@@ -63,6 +72,12 @@ const Products = ({
   useEffect(() => {
     dispatch(getToppings());
   }, []);
+
+  useEffect(() => {
+    if (cart.length > 0) {
+      setItems(cart);
+    }
+  }, [setItems, cart]);
 
   useEffect(() => {
     emptyArrayRef.current = new Array(toppings.length).fill(false);

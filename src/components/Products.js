@@ -248,81 +248,86 @@ const Products = ({
   };
 
   return (
-    <Layout>
+    <>
       {search ? (
-        <div className="products">
-          <div className="main-title">{category}</div>
-          {category === "pizza" && (
-            <div className="filters">
-              <input
-                type="checkbox"
-                id="filter"
-                className="custom-checkbox"
-                name="filter"
-                value="veg-only"
-                checked={selectedFilter}
-                onChange={handleFilterChange}
-              />{" "}
-              <label htmlFor="filter">Veg only</label>
-            </div>
-          )}
-          {isFailed && (
-            <p className="error-msg">
-              Error while loading products. Please try again.
-            </p>
-          )}
-          {isLoading ? (
-            <p className="loading">Loading...</p>
-          ) : (
-            filteredResults.map(
-              ({
-                _id,
-                name,
-                description,
-                price,
-                quantity,
-                rating,
-                image,
-                is_veg,
-              }) => (
-                <Product
-                  key={_id}
-                  id={_id}
-                  title={name}
-                  description={description}
-                  price={price}
-                  quantity={quantity}
-                  rating={rating}
-                  image={image?.url}
-                  isVeg={is_veg}
-                  category={category}
-                  toggleModal={toggleModal}
-                  addProductToCart={addProductToCart}
-                  cart={cart}
-                  cartQuantity={cart.find((item) => item.id === _id)?.quantity}
-                  changeProductCount={changeProductCount}
-                />
+        <Layout cartCount={items.length}>
+          <div className="products">
+            <div className="main-title">{category}</div>
+            {category === "pizza" && (
+              <div className="filters">
+                <input
+                  type="checkbox"
+                  id="filter"
+                  className="custom-checkbox"
+                  name="filter"
+                  value="veg-only"
+                  checked={selectedFilter}
+                  onChange={handleFilterChange}
+                />{" "}
+                <label htmlFor="filter">Veg only</label>
+              </div>
+            )}
+            {isFailed && (
+              <p className="error-msg">
+                Error while loading products. Please try again.
+              </p>
+            )}
+            {isLoading ? (
+              <p className="loading">Loading...</p>
+            ) : (
+              filteredResults.map(
+                ({
+                  _id,
+                  name,
+                  description,
+                  price,
+                  quantity,
+                  rating,
+                  image,
+                  is_veg,
+                }) => (
+                  <Product
+                    key={_id}
+                    id={_id}
+                    title={name}
+                    description={description}
+                    price={price}
+                    quantity={quantity}
+                    rating={rating}
+                    image={image?.url}
+                    isVeg={is_veg}
+                    category={category}
+                    toggleModal={toggleModal}
+                    addProductToCart={addProductToCart}
+                    cart={cart}
+                    cartQuantity={
+                      cart.find((item) => item.id === _id)?.quantity
+                    }
+                    changeProductCount={changeProductCount}
+                  />
+                )
               )
-            )
-          )}
-        </div>
+            )}
+          </div>
+
+          <ToppingsModal
+            showModal={showModal}
+            toggleModal={toggleModal}
+            modalTitle={modalTitle}
+            toppings={toppings}
+            checkedState={checkedState}
+            productQuantity={productQuantity}
+            selectedToppingsCount={selectedToppingsCount}
+            totalOrderPrice={totalOrderPrice}
+            handleQuantityChange={handleQuantityChange}
+            handleToppingsSelection={handleToppingsSelection}
+            addPizzaToCart={addPizzaToCart}
+          />
+        </Layout>
       ) : (
         <Redirect to="/" />
       )}
-      <ToppingsModal
-        showModal={showModal}
-        toggleModal={toggleModal}
-        modalTitle={modalTitle}
-        toppings={toppings}
-        checkedState={checkedState}
-        productQuantity={productQuantity}
-        selectedToppingsCount={selectedToppingsCount}
-        totalOrderPrice={totalOrderPrice}
-        handleQuantityChange={handleQuantityChange}
-        handleToppingsSelection={handleToppingsSelection}
-        addPizzaToCart={addPizzaToCart}
-      />
-    </Layout>
+    </>
   );
 };
 

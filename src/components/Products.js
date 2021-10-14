@@ -17,7 +17,7 @@ import { getQueryStringValue } from "../utils/functions";
 import {
   addToCartAction,
   changeProductCountAction,
-} from "../actions/cardActions";
+} from "../actions/cartActions";
 
 const Products = ({
   dispatch,

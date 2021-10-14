@@ -14,7 +14,10 @@ import ToppingsModal from "./ToppingsModal";
 import { getAllProducts } from "../actions/productsActions";
 import { getToppings } from "../actions/toppingsActions";
 import { getQueryStringValue } from "../utils/functions";
-import { addToCartAction } from "../actions/cardActions";
+import {
+  addToCartAction,
+  changeProductCountAction,
+} from "../actions/cardActions";
 
 const Products = ({
   dispatch,
@@ -240,6 +243,10 @@ const Products = ({
     setFilteredResults(result);
   };
 
+  const changeProductCount = (id, operation) => {
+    dispatch(changeProductCountAction(id, operation === "increment"));
+  };
+
   return (
     <Layout>
       {search ? (
@@ -291,6 +298,9 @@ const Products = ({
                   category={category}
                   toggleModal={toggleModal}
                   addProductToCart={addProductToCart}
+                  cart={cart}
+                  cartQuantity={cart.find((item) => item.id === _id)?.quantity}
+                  changeProductCount={changeProductCount}
                 />
               )
             )

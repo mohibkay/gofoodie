@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from "react-bootstrap";
 import Rating from "react-rating";
 import { MAX_DESCRIPTION_CHARS } from "../utils/constants";
@@ -17,8 +17,15 @@ const Product = ({
   category,
   changeProductCount,
   addProductToCart,
+  cart,
+  cartQuantity,
 }) => {
-  const [productQuantity, setProductQuantity] = useState(1);
+  const [productQuantity, setProductQuantity] = useState(cartQuantity);
+  const isProductAlreadyAdded = cart.some((item) => item.id === id);
+
+  useEffect(() => {
+    setProductQuantity(cart.find((item) => item.id === id)?.quantity);
+  }, [cart, id]);
 
   const displayDescription = (description) => {
     if (description.length > MAX_DESCRIPTION_CHARS) {
@@ -78,7 +85,7 @@ const Product = ({
               {showIcons()}
               {isOutOfStock && <span className="oos">Out of stock</span>}
             </h5>
-            {false ? (
+            {isProductAlreadyAdded ? (
               <div
                 disabled={isOutOfStock}
                 className={`${

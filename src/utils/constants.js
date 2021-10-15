@@ -27,3 +27,5 @@ export const REMOVE_FROM_CART_FAILURE = "REMOVE_FROM_CART_FAILURE";
 export const CHANGE_PRODUCT_COUNT = "CHANGE_PRODUCT_COUNT";
 
 export const MAX_DESCRIPTION_CHARS = 100;
+
+export const NODE_API_URL = "http://localhost:3030";

@@ -1,4 +1,5 @@
 export const CURRENCY = "Rs.";
+export const LOADING_MESSAGE = "Processing...";
 
 export const GET_CATEGORIES_REQUEST = "GET_CATEGORIES_REQUEST";
 export const GET_CATEGORIES_SUCCESS = "GET_CATEGORIES_SUCCESS";

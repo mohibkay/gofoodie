@@ -12,7 +12,7 @@ import { loadStripe } from "@stripe/stripe-js/pure";
 import axios from "axios";
 
 const Checkout = ({ cart }) => {
-  const { items } = useContext(CartContext);
+  const { items, setIsLoading } = useContext(CartContext);
   const {
     register,
     handleSubmit,
@@ -76,6 +76,7 @@ const Checkout = ({ cart }) => {
   }, [selectedState]);
 
   const onSubmit = async (data) => {
+    setIsLoading(true);
     try {
       const stripe = await loadStripe(
         process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY
@@ -100,6 +101,8 @@ const Checkout = ({ cart }) => {
       });
     } catch (error) {
       console.log("err", error);
+    } finally {
+      setIsLoading(false);
     }
   };
 

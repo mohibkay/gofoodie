@@ -6,6 +6,7 @@ import App from "../components/App";
 import Products from "../components/Products";
 import ShoppingCart from "../components/ShoppingCart";
 import MenuItems from "../components/MenuItems";
+import Checkout from "../components/Checkout";
 
 const AppRouter = () => {
   const [items, setItems] = useLocalStorage("cartItems", []);
@@ -14,10 +15,11 @@ const AppRouter = () => {
     <BrowserRouter>
       <CartContext.Provider value={{ items, setItems }}>
         <Switch>
-          <Route component={App} path="/" exact={true} />
-          <Route component={Products} path="/products" />
-          <Route component={ShoppingCart} path="/cart" />
-          <Route component={MenuItems} path="/menu" />
+          <Route exact path="/" component={App} />
+          <Route path="/products" component={Products} />
+          <Route path="/cart" component={ShoppingCart} />
+          <Route path="/menu" component={MenuItems} />
+          <Route path="/checkout" component={Checkout} />
         </Switch>
       </CartContext.Provider>
     </BrowserRouter>

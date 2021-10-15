@@ -1,4 +1,5 @@
 export const CURRENCY = "Rs.";
+export const LOADING_MESSAGE = "Processing...";
 
 export const GET_CATEGORIES_REQUEST = "GET_CATEGORIES_REQUEST";
 export const GET_CATEGORIES_SUCCESS = "GET_CATEGORIES_SUCCESS";
@@ -28,4 +29,4 @@ export const CHANGE_PRODUCT_COUNT = "CHANGE_PRODUCT_COUNT";
 
 export const MAX_DESCRIPTION_CHARS = 100;
 
-export const NODE_API_URL = "http://localhost:3030";
+export const NODE_API_URL = "https://gofoodie-mk.herokuapp.com";

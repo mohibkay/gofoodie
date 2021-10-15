@@ -29,4 +29,4 @@ export const CHANGE_PRODUCT_COUNT = "CHANGE_PRODUCT_COUNT";
 
 export const MAX_DESCRIPTION_CHARS = 100;
 
-export const NODE_API_URL = "http://localhost:3030";
+export const NODE_API_URL = "https://gofoodie-mk.herokuapp.com";

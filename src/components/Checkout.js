@@ -6,8 +6,10 @@ import { Form, Button, Row, Col } from "react-bootstrap";
 import csc from "country-state-city";
 import Layout from "./Layout";
 import { getCartTotal, getFormattedToppings } from "../utils/functions";
-import { CURRENCY } from "../utils/constants";
+import { CURRENCY, NODE_API_URL } from "../utils/constants";
 import CartContext from "../context/CartContext";
+import { loadStripe } from "@stripe/stripe-js/pure";
+import axios from "axios";
 
 const Checkout = ({ cart }) => {
   const { items } = useContext(CartContext);
@@ -74,7 +76,31 @@ const Checkout = ({ cart }) => {
   }, [selectedState]);
 
   const onSubmit = async (data) => {
-    console.log({ ...data, city: selectedCity, state: selectedState });
+    try {
+      const stripe = await loadStripe(
+        process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY
+      );
+
+      const totalOrderAmount = cart.reduce((sum, item) => {
+        return sum + item.price * item.quantity;
+      }, 0);
+
+      const response = await axios.post(`${NODE_API_URL}/payment`, {
+        cart,
+        user: {
+          ...data,
+          city: selectedCity,
+          state: selectedState,
+        },
+        totalOrderAmount,
+      });
+
+      await stripe.redirectToCheckout({
+        sessionId: response.data.id,
+      });
+    } catch (error) {
+      console.log("err", error);
+    }
   };
 
   return (

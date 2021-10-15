@@ -25,7 +25,7 @@ const Header = ({ showCart = false, cartCount = 0 }) => {
       <header className="navigation-bar">
         <div className="home-link">
           <Link to="/">
-            <h1>Food Market</h1>
+            <h1>gofoodie</h1>
           </Link>
         </div>
         <div

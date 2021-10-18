@@ -3,6 +3,7 @@ import {
   GET_PRODUCTS_REQUEST,
   GET_PRODUCTS_SUCCESS,
   GET_PRODUCTS_FAILURE,
+  STRAPI_API_URL,
 } from "../utils/constants";
 
 export const getAllProducts = (category) => {
@@ -11,12 +12,12 @@ export const getAllProducts = (category) => {
       let result;
 
       dispatch(loadProductsRequest());
-      const { data: products } = await axios.get("/products.json");
+      const { data: products } = await axios.get(`${STRAPI_API_URL}/products`);
+
       if (category) {
         result = products.filter(
           (product) =>
-            product.categories.cat_title.toLowerCase() ===
-            category.toLowerCase()
+            product.category.cat_title.toLowerCase() === category.toLowerCase()
         );
       } else {
         result = products;

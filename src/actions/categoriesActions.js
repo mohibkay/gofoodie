@@ -3,13 +3,14 @@ import {
   GET_CATEGORIES_REQUEST,
   GET_CATEGORIES_SUCCESS,
   GET_CATEGORIES_FAILURE,
+  STRAPI_API_URL,
 } from "../utils/constants";
 
 export const getCategories = () => {
   return async (dispatch) => {
     try {
       dispatch(loadCategoriesRequest());
-      const { data } = await axios.get("/categories.json");
+      const { data } = await axios.get(`${STRAPI_API_URL}/categories`);
       dispatch(loadCategoriesSuccess(data));
     } catch (error) {
       dispatch(loadCategoriesFailure());

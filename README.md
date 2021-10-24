@@ -6,6 +6,8 @@ gofoodie is an e-commerce app for ordering food.
 
 <b>Frontend</b>: Reactjs
 <br>
+<b>Backend</b>: Express js
+<br>
 <b>Database</b>: Mongo DB
 <br>
 <b>Deployment</b>: Vercel
@@ -15,18 +17,24 @@ gofoodie is an e-commerce app for ordering food.
 - axios
 - bootstrap
 - country-state-city
-- dotenv
-- node-sass
-- react
 - react-bootstrap
 - react-confetti
 - react-hook-form
 - react-icons
 - react-rating
-- react-redux
 - react-toastify
+- react-redux
 - redux
 - redux-thunk
 - stripe
 
 <br>
+
+## Functionality
+
+- Product listing
+- Checkout
+- Address Input
+- Payment Gateway using Stripe
+- Send emails using SendGrid
+- Managing Inventory using Strapi

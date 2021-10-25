@@ -1,5 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import Confetti from "react-confetti";
+
+//Components
 import Layout from "../components/Layout";
 import CartContext from "../context/CartContext";
 

@@ -6,11 +6,11 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 // components
-import Product from "./Product";
-import Layout from "./Layout";
-import ToppingsModal from "./ToppingsModal";
+import Product from "../components/Product";
+import Layout from "../components/Layout";
+import ToppingsModal from "../components/ToppingsModal";
 
-// functions
+// utilities
 import { getAllProducts } from "../actions/productsActions";
 import { getToppings } from "../actions/toppingsActions";
 import { getQueryStringValue } from "../utils/functions";

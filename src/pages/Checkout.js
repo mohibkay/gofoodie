@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import { connect } from "react-redux";
 import { Form, Button, Row, Col } from "react-bootstrap";
 import csc from "country-state-city";
-import Layout from "./Layout";
+import Layout from "../components/Layout";
 import { getCartTotal, getFormattedToppings } from "../utils/functions";
 import { CURRENCY, NODE_API_URL } from "../utils/constants";
 import CartContext from "../context/CartContext";

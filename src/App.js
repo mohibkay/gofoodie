@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import CartContext from "../context/CartContext";
-import useLocalStorage from "../hooks/useLocalStorage";
-import App from "../components/App";
-import Products from "../components/Products";
-import ShoppingCart from "../components/ShoppingCart";
-import MenuItems from "../components/MenuItems";
-import Checkout from "../components/Checkout";
-import PaymentSuccessPage from "../components/PaymentSuccessPage";
-import Loader from "../components/Loader";
-import { LOADING_MESSAGE } from "../utils/constants";
+import Home from "./components/Home";
+import CartContext from "./context/CartContext";
+import useLocalStorage from "./hooks/useLocalStorage";
+import Products from "./components/Products";
+import ShoppingCart from "./components/ShoppingCart";
+import MenuItems from "./components/MenuItems";
+import Checkout from "./components/Checkout";
+import PaymentSuccessPage from "./components/PaymentSuccessPage";
+import Loader from "./components/Loader";
+import { LOADING_MESSAGE } from "./utils/constants";
 
 const AppRouter = () => {
   const [items, setItems] = useLocalStorage("cartItems", []);
@@ -20,7 +20,7 @@ const AppRouter = () => {
       <Loader show={isLoading}>{LOADING_MESSAGE}</Loader>
       <CartContext.Provider value={{ items, setItems, setIsLoading }}>
         <Switch>
-          <Route exact path="/" component={App} />
+          <Route exact path="/" component={Home} />
           <Route path="/products" component={Products} />
           <Route path="/cart" component={ShoppingCart} />
           <Route path="/menu" component={MenuItems} />

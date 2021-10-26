@@ -1,8 +1,8 @@
-import Carousel from "./Carousel";
-import Footer from "./Footer";
+import Carousel from "../components/Carousel";
+import Footer from "../components/Footer";
 import MenuItems from "./MenuItems";
 
-function App() {
+const Home = () => {
   return (
     <div>
       <Carousel />
@@ -19,6 +19,6 @@ function App() {
       <Footer />
     </div>
   );
-}
+};
 
-export default App;
+export default Home;

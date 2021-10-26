@@ -2,12 +2,16 @@
 import { useState, useEffect, useContext } from "react";
 import { connect } from "react-redux";
 import { TiDelete } from "react-icons/ti";
+
+// Components
+import Layout from "../components/Layout";
+import CartContext from "../context/CartContext";
+
+// Utilities
 import { removeFromCartAction } from "../actions/cartActions";
 import { getFormattedPrice, getFormattedToppings } from "../utils/functions";
-import Layout from "./Layout";
 import { getAllProducts } from "../actions/productsActions";
 import { CURRENCY, REMOVE_FROM_CART_SUCCESS } from "../utils/constants";
-import CartContext from "../context/CartContext";
 
 const ShoppingCart = ({ cart, products, dispatch, history, isFailed }) => {
   const [cartProducts, setCartProducts] = useState(() => cart);

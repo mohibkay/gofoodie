@@ -1,6 +1,8 @@
 import React, { useContext, useEffect } from "react";
 import Confetti from "react-confetti";
-import Layout from "./Layout";
+
+//Components
+import Layout from "../components/Layout";
 import CartContext from "../context/CartContext";
 
 const PaymentSuccessPage = () => {
